@@ -200,6 +200,12 @@ TLI_DEFINE_STRING_INTERNAL("__memset_chk")
 TLI_DEFINE_ENUM_INTERNAL(nvvm_reflect)
 TLI_DEFINE_STRING_INTERNAL("__nvvm_reflect")
 
+/// void *__rust_allocate(size_t size, size_t align)
+TLI_DEFINE_ENUM_INTERNAL(rust_allocate)
+TLI_DEFINE_STRING_INTERNAL("__rust_allocate")
+/// void __rust_deallocate(void *ptr, size_t size, size_t align)
+TLI_DEFINE_ENUM_INTERNAL(rust_deallocate)
+TLI_DEFINE_STRING_INTERNAL("__rust_deallocate")
 /// double __sincospi_stret(double x);
 TLI_DEFINE_ENUM_INTERNAL(sincospi_stret)
 TLI_DEFINE_STRING_INTERNAL("__sincospi_stret")
