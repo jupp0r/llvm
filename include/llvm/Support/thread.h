@@ -19,7 +19,7 @@
 
 #include "llvm/Config/llvm-config.h"
 
-#if LLVM_ENABLE_THREADS
+#if LLVM_ENABLE_THREADS && 0
 
 #ifdef _MSC_VER
 // concrt.h depends on eh.h for __uncaught_exception declaration
