@@ -18,6 +18,15 @@
 #include "llvm/IR/Module.h"
 #include "llvm/Pass.h"
 
+#undef fopen64
+#undef fseeko64
+#undef fstat64
+#undef fstatvfs64
+#undef ftello64
+#undef lstat64
+#undef stat64
+#undef tmpfile64
+
 namespace llvm {
 /// VecDesc - Describes a possible vectorization of a function.
 /// Function 'VectorFnName' is equivalent to 'ScalarFnName' vectorized
