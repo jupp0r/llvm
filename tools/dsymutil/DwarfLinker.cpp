@@ -1645,7 +1645,7 @@ PointerIntPair<DeclContext *, 1> DeclContextTree::getChildDeclContext(
             if (!ResolvedPath.empty()) {
               FileRef = ResolvedPath;
             } else {
-#ifdef HAVE_REALPATH
+#if defined(HAVE_REALPATH) && defined(PATH_MAX)
               char RealPath[PATH_MAX + 1];
               RealPath[PATH_MAX] = 0;
               if (::realpath(File.c_str(), RealPath))

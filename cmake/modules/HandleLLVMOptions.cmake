@@ -102,9 +102,12 @@ endif()
 
 # Pass -Wl,-z,defs. This makes sure all symbols are defined. Otherwise a DSO
 # build might work on ELF but fail on MachO/COFF.
-if(NOT (${CMAKE_SYSTEM_NAME} MATCHES "Darwin" OR WIN32 OR CYGWIN OR
-        ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" OR
-        ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD") AND
+if(NOT (${TARGET_TRIPLE} MATCHES "darwin" OR
+        ${TARGET_TRIPLE} MATCHES "windows" OR
+        ${TARGET_TRIPLE} MATCHES "mingw" OR
+        ${TARGET_TRIPLE} MATCHES "freebsd" OR
+        ${TARGET_TRIPLE} MATCHES "netbsd" OR
+        ${TARGET_TRIPLE} MATCHES "openbsd") AND
    NOT LLVM_USE_SANITIZER)
   set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-z,defs")
 endif()
